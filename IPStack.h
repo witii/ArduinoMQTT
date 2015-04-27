@@ -19,14 +19,17 @@
 #define IPSTACK_H
 
 #include <Arduino.h>
-#include <SPI.h>
-
 #include <Client.h>
 
 class IPStack {
 public:
+//    IPStack() {}
     IPStack(Client &client) : client(&client) {
 
+    }
+
+    void setClient(Client &client) {
+        this->client = &client;
     }
 
     int connect(char *hostname, uint16_t port) {

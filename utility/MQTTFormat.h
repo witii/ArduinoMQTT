@@ -17,6 +17,11 @@
 #if !defined(MQTTFORMAT_H)
 #define MQTTFORMAT_H
 
+#ifdef	__cplusplus
+extern "C"
+{
+#endif
+
 #include "StackTrace.h"
 #include "MQTTPacket.h"
 #include "MQTTConnect.h"
@@ -34,5 +39,9 @@ int MQTTStringFormat_unsubscribe(char* strbuf, int strbuflen, unsigned char dup,
 		int count, MQTTString topicFilters[]);
 char* MQTTFormat_toClientString(char* strbuf, int strbuflen, unsigned char* buf, int buflen);
 char* MQTTFormat_toServerString(char* strbuf, int strbuflen, unsigned char* buf, int buflen);
+
+#ifdef __cplusplus /* If this is a C++ compiler, use C linkage */
+}
+#endif
 
 #endif

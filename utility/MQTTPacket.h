@@ -22,6 +22,7 @@
 extern "C" {
 #endif
 
+
 #if defined(WIN32_DLL) || defined(WIN64_DLL)
   #define DLLImport __declspec(dllimport)
   #define DLLExport __declspec(dllexport)
@@ -84,15 +85,15 @@ typedef struct
 	MQTTLenString lenstring;
 } MQTTString;
 
-#define MQTTString_initializer {NULL, {0, NULL}}
-
-int MQTTstrlen(MQTTString mqttstring);
-
 #include "MQTTConnect.h"
 #include "MQTTPublish.h"
 #include "MQTTSubscribe.h"
 #include "MQTTUnsubscribe.h"
 #include "MQTTFormat.h"
+
+#define MQTTString_initializer {NULL, {0, NULL}}
+
+int MQTTstrlen(MQTTString mqttstring);
 
 int MQTTSerialize_ack(unsigned char* buf, int buflen, unsigned char type, unsigned char dup, unsigned short packetid);
 int MQTTDeserialize_ack(unsigned char* packettype, unsigned char* dup, unsigned short* packetid, unsigned char* buf, int buflen);

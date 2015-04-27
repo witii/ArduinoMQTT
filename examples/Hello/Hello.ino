@@ -17,14 +17,13 @@
 
 #define MQTTCLIENT_QOS2 1
 
-#include <SPI.h>
 #include <WiFi.h>
 #include <OxMqtt.h>
 
 // your network name also called SSID
-char ssid[] = "ssid";
+char ssid[] = "dolink";
 // your network password
-char password[] = "password";
+char password[] = "king8888";
 
 char printbuf[100];
 

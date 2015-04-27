@@ -18,6 +18,11 @@
 #ifndef MQTTUNSUBSCRIBE_H_
 #define MQTTUNSUBSCRIBE_H_
 
+#ifdef	__cplusplus
+extern "C"
+{
+#endif
+
 #if !defined(DLLImport)
   #define DLLImport 
 #endif
@@ -34,5 +39,9 @@ DLLExport int MQTTDeserialize_unsubscribe(unsigned char* dup, unsigned short* pa
 DLLExport int MQTTSerialize_unsuback(unsigned char* buf, int buflen, unsigned short packetid);
 
 DLLExport int MQTTDeserialize_unsuback(unsigned short* packetid, unsigned char* buf, int len);
+
+#ifdef __cplusplus /* If this is a C++ compiler, use C linkage */
+}
+#endif
 
 #endif /* MQTTUNSUBSCRIBE_H_ */

@@ -18,6 +18,11 @@
 #ifndef STACKTRACE_H_
 #define STACKTRACE_H_
 
+#ifdef	__cplusplus
+extern "C"
+{
+#endif
+
 #include <stdio.h>
 #define NOSTACKTRACE 1
 
@@ -72,7 +77,8 @@ char* StackTrace_get(unsigned long);
 
 #endif
 
-
-
+#ifdef __cplusplus /* If this is a C++ compiler, use C linkage */
+}
+#endif
 
 #endif /* STACKTRACE_H_ */

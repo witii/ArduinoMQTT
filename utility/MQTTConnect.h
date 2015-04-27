@@ -18,6 +18,11 @@
 #ifndef MQTTCONNECT_H_
 #define MQTTCONNECT_H_
 
+#ifdef	__cplusplus
+extern "C"
+{
+#endif
+
 #if !defined(DLLImport)
   #define DLLImport 
 #endif
@@ -133,5 +138,9 @@ DLLExport int MQTTDeserialize_connack(unsigned char* sessionPresent, unsigned ch
 
 DLLExport int MQTTSerialize_disconnect(unsigned char* buf, int buflen);
 DLLExport int MQTTSerialize_pingreq(unsigned char* buf, int buflen);
+
+#ifdef __cplusplus /* If this is a C++ compiler, use C linkage */
+}
+#endif
 
 #endif /* MQTTCONNECT_H_ */

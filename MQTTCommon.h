@@ -25,6 +25,8 @@
 #include "stdio.h"
 #include "MQTTLogging.h"
 
+#define MQTT_DEBUG
+
 #if !defined(MQTTCLIENT_QOS1)
 #define MQTTCLIENT_QOS1 1
 #endif
@@ -52,10 +54,10 @@ struct MQTTPacket {
 
 
 struct MQTTMessage {
-    MQTTMessage(MQTTString &aTopic, struct MQTTPacket &aPacket) : topic(aTopic), packet(aPacket) { }
+    MQTTMessage(MQTTString &aTopic, struct MQTTPacket &aPacket) : topic(aTopic), packet(aPacket) {}
 
+    MQTTString topic;
     struct MQTTPacket &packet;
-    MQTTString &topic;
 };
 
 

@@ -8,8 +8,8 @@
 template <int MAX_MQTT_PACKET_SIZE = 100, int MAX_MESSAGE_HANDLERS = 5>
 class MQTTClient: public GenericMQTTClient<IPStack, Countdown, MAX_MQTT_PACKET_SIZE, MAX_MESSAGE_HANDLERS> {
 public:
-    MQTTClient(IPStack &client, unsigned int command_timeout_ms = 30000):
-            GenericMQTTClient<IPStack, Countdown, MAX_MQTT_PACKET_SIZE, MAX_MESSAGE_HANDLERS>(client, command_timeout_ms) {}
+    MQTTClient(Client &client, unsigned int command_timeout_ms = 30000): ipstack(IPStack(client)),
+            GenericMQTTClient<IPStack, Countdown, MAX_MQTT_PACKET_SIZE, MAX_MESSAGE_HANDLERS>(ipstack, command_timeout_ms) {}
 
     /** MQTT Connect - send an MQTT connect packet down the network and wait for a Connack
      *  The nework object must be connected to the network endpoint before calling this
@@ -25,7 +25,10 @@ public:
      */
     virtual int connect(MQTTConnectOptions &options);
 
+
+
 private:
+    IPStack ipstack;
     void setMQTTString(MQTTString &dst, String const &src);
     void setMQTTWillOptions(MQTTPacket_willOptions &dst, const MQTTWillOptions &src);
     void setMQTTConnectData(MQTTPacket_connectData &dst, const MQTTConnectOptions &src);

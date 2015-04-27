@@ -1,6 +1,11 @@
 #ifndef GENERICMQTTCLIENT_H
 #define GENERICMQTTCLIENT_H
 
+#include "Arduino.h"
+#include "FP.h"
+#include "utility/MQTTPacket.h"
+#include "stdio.h"
+#include "MQTTLogging.h"
 #include "MQTTCommon.h"
 
 /**
