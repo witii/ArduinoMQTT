@@ -780,7 +780,6 @@ int GenericMQTTClient<Network, Timer, MAX_MQTT_PACKET_SIZE, b>::publish(const ch
 #endif
     }
 #endif
-
     rc = publish(len, timer, qos);
     exit:
     return rc;

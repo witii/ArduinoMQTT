@@ -2,10 +2,6 @@
 
 #include <WiFi.h>
 
-#include "utility/MQTTPacket.h"
-#include "utility/MQTTConnect.h"
-#include "utility/MQTTPublish.h"
-
 #include "Countdown.h"
 #include "FP.h"
 #include "GenericMQTTClient.h"
