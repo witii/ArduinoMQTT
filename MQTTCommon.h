@@ -25,7 +25,7 @@
 #include "stdio.h"
 #include "MQTTLogging.h"
 
-//#define MQTT_DEBUG
+#define MQTT_DEBUG
 
 #if !defined(MQTTCLIENT_QOS1)
 #define MQTTCLIENT_QOS1 1

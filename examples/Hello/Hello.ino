@@ -18,12 +18,8 @@
 #define MQTTCLIENT_QOS2 1
 
 #include <WiFi.h>
-#include <OxMqtt.h>
-
-// your network name also called SSID
-char ssid[] = "dolink";
-// your network password
-char password[] = "king8888";
+#include <ArduinoMQTT.h>
+#include "ssid.h"
 
 char printbuf[100];
 
